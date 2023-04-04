@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+
+
+:root{
+    --main: #0d3a0d;
+    --subMain: #1d7e43;
+    --subColor: #696269;
+    --dark-grey: #8D8D8D;
+    --text: #0d3a0d;
+    --main-rgb: 13, 58, 13;
+    --body:#ececec;
+    --font-base: "Open Sans", sans-serif;
+    --box-shadow: 0px 15px 25px rgba(0, 0, 0,0.08);
+    --transition: all 0.5s ease;
+}
+
+
+body{
+    font-family: var(--font-base);
+    line-height: 1.7;
+    background-color:#ffff;
+    color: var(--text);
+   
+}
+
+.required:after{
+    content:" *";
+    color: red;
+    
+}
+.form-control:focus{
+    
+    border-color:  var(--subMain);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(4, 88, 33, 0.452), 0 0 8px rgba(5, 133, 69, 0.427);
+   
+} 
+.btn-main{
+    background-color: var(--main);
+    color: white;
+}
+.btn-main:hover{
+    background-color: var(--subMain);
+    color:white;  
+            
+}
+.btn-main:focus{
+    border-color:  var(--main);
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(4, 88, 33, 0.452), 0 0 8px rgba(5, 133, 69, 0.427);
+    background-color: var(--main);
+    color: white;
+        
+}
+
+
+a{
+    text-decoration: none;
+   
+}
+a:hover{
+    color: var(--main);
+}
