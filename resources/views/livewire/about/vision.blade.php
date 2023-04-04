@@ -32,7 +32,9 @@
 @push('scripts') 
 <script>
     ClassicEditor
-        .create(document.querySelector('#vision'))
+        .create(document.querySelector('#vision'),{
+          removePlugins: ['CKFinderUploadAdapter', 'CKFinder', 'EasyImage', 'ImageCaption', 'ImageStyle', 'ImageToolbar', 'ImageUpload', 'Table', 'MediaEmbed'],
+        })
         
         .then(editor => {
             editor.model.document.on('change:data', (e) => {

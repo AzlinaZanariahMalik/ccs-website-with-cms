@@ -43,7 +43,7 @@
 
                 <div class="col-md-6 d-flex justify-content-center">
                     <!-- Simple link -->
-                        <a href="{{route('admin.forgot-password') }}">Forgot password?</a>
+                        <a href="{{route('forgot-password') }}">Forgot password?</a>
                 </div>
             </div> 
                                

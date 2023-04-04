@@ -15,11 +15,7 @@ use \App\Http\Controllers\LogoController;
 |
 */
 
-
-
-Route::prefix('admin')->name('admin.')->group(function(){
-
-    Route::middleware(['guest:web'])->group(function(){
+ Route::middleware(['guest:web'])->group(function(){
         
         Route::view('/login','back.pages.auth.login')->name('login'); 
         Route::view('/forgot-password','back.pages.auth.forgot')->name('forgot-password');
@@ -28,6 +24,10 @@ Route::prefix('admin')->name('admin.')->group(function(){
         Route::post('/login',[UserLoginForm::class,'LoginHandler']); 
 
     });
+
+Route::prefix('admin')->name('admin.')->group(function(){
+
+   
 
     Route::middleware(['auth:web'])->group(function(){
        

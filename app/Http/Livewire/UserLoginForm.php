@@ -41,7 +41,7 @@ class UserLoginForm extends Component
             $checkUser = User::where('email', $this->email)->first();
             if($checkUser->status == 1){
                 Auth::guard('web')->logout();
-                return redirect()->route('admin.login')->with('fail','Your account has been disabled.');
+                return redirect()->route('login')->with('fail','Your account has been disabled.');
             }else{
             //return redirect()->route('admin.home');
                 if( $this->returnURL != null){

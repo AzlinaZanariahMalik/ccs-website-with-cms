@@ -59,7 +59,7 @@ class UserResetForm extends Component
             //show success message
             session()->flash('success', 'Your Password Has been Succesfully Updated');
 
-            $this->redirectRoute('admin.login', ['tkn'=>$success_token,'UEmail'=>$this->email]);
+            $this->redirectRoute('login', ['tkn'=>$success_token,'UEmail'=>$this->email]);
         }
 
     }

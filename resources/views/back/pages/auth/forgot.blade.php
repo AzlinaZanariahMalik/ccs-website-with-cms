@@ -22,7 +22,7 @@
 
                                 <div class="col-md-6 d-flex justify-content-center">
                                     <!-- Simple link -->
-                                    <a href="{{route('admin.login') }}"> back to login</a>
+                                    <a href="{{route('login') }}"> back to login</a>
                                 </div>
                             </div>
                         </div>

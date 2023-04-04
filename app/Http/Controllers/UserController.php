@@ -19,7 +19,7 @@ class UserController extends Controller
 
     public function logout(){
         Auth::guard('web')->logout();
-        return redirect()->route('admin.login');
+        return redirect()->route('login');
     }
 
     public function ResetForm(Request $request, $token = null){

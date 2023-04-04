@@ -20,7 +20,7 @@ class Authenticate extends Middleware
             //return route('login')
             if($request->routeIs('admin.*')){
                 session()->flash('fail','Please Sign into your account');
-                return route('admin.login',['fail'=>true,'returnURL'=>URL::current()]);
+                return route('login',['fail'=>true,'returnURL'=>URL::current()]);
             }
             
         }

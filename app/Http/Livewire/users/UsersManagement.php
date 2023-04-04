@@ -160,6 +160,24 @@ class UsersManagement extends Component
 
         }
     }
+
+    //delete
+    public function deleteUser($user){
+      $this->user_id = $user['id'];
+      $this->dispatchBrowserEvent('openDeleteModal');
+    }
+    public function delete()
+    {
+        //pass the variable
+        User::destroy($this->user_id);
+
+         //show success message
+         session()->flash('success', 'Succesfully Deleted User');
+          
+         //close modal
+        $this->dispatchBrowserEvent('hideDeleteModal');
+
+    }
     public function isOnline($site = "https://youtube.com/"){
         if(@fopen($site,'r')){
             return true;
