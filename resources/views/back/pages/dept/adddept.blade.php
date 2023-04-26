@@ -1,8 +1,7 @@
 @extends('back.layouts.pages-layout')
-@section('title') {{'Profile'}} @endsection
+@section('title') {{'Add Department'}} @endsection
 
 @section('content')
-
 
 
 	<!-- end of sidebar menu -->
@@ -14,31 +13,20 @@
 
 		<!-- main content -->
 		<main>
-			<h1 class="title">Profile</h1>
+			<h1 class="title">Add Department</h1>
 			<ul class="breadcrumbs">
+				<li><a href="{{ route('admin.home')}}">Home</a></li> / 
+				<li><a href="{{ route('admin.department')}}" >Department</a></li> /
+				<li><a href="#" class="active">Add Department</a></li>
 			
-				<li><a href="#" class="active">Profile Setting</a></li>
 			</ul>
-		<!---profile--->
-			
-        @livewire('profile.user-profile-header')
-	     
-        <!---end of profile---->
-
-        <!---personal details-->
-
-        @livewire('profile.user-personal-details')
-
-        <!--end of personal details--->
-
 		
+        <!---Adding New News-->
+       @livewire('department.department-form')
+        
 
-        <!--change password----->
+        <!--end of Adding News--->
 
-        @livewire('profile.user-change-password-form')
-
-        <!--end of change password--->
-				
 			
 		</main>
 		<!-- end of main content -->
@@ -50,4 +38,3 @@
 	<!-- end of body of page content -->
 
 @endsection
- 

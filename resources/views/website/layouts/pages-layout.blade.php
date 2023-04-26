@@ -149,6 +149,8 @@
     <!--Livewire Framework----->
     @livewireScripts
     <script src="{{ asset('website/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('back/js/jquery.min.js') }}" ></script>
+    <script src="{{ asset('back/js/main.js')}}"></script>
     
     
      </body>

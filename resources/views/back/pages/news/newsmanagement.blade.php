@@ -1,8 +1,7 @@
 @extends('back.layouts.pages-layout')
-@section('title') {{'User Manage'}} @endsection
+@section('title') {{'News Management'}} @endsection
 
 @section('content')
-
 
 	<!-- end of sidebar menu -->
 	<!-- page body content -->
@@ -13,16 +12,24 @@
 
 		<!-- main content -->
 		<main>
-			<h1 class="title">Users</h1>
+			<h1 class="title">News Management</h1>
 			<ul class="breadcrumbs">
 				<li><a href="{{ route('admin.home')}}">Home</a></li> / 
-				<li><a href="#" class="active" >Users Management</a></li> 
+				<li><a href="#">News</a></li> /
+                <li><a href="#" class="active">News Management</a></li> 
+			
 			</ul>
+		
+       <!---Adding New News and Managing news for user with publish permission-->
+       @if(auth()->user()->publish_permission == 1)
+       @livewire('news.news-management')
+	   @elseif (auth()->user()->publish_permission == 0)
+        @livewire('news.news-list')
+	   @endif
 
-        <!--Users Content------->
-        @livewire('users.users-management')
+       <!--end of Adding News for user publish permission--->
 
-        <!--end of User Table--->
+
 
 			
 		</main>

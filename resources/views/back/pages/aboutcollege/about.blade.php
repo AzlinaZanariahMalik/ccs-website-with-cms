@@ -1,10 +1,9 @@
 @extends('back.layouts.pages-layout')
-@section('title') {{'Downloadable Files'}} @endsection
+@section('title') {{'About'}} @endsection
 
 @section('content')
 
-
-
+	<!-- end of sidebar menu -->
 	<!-- page body content -->
 	<section id="content">
 		<!-- header-->
@@ -13,18 +12,19 @@
 
 		<!-- main content -->
 		<main>
-			<h1 class="title">Downloadable Files</h1>
+			<h1 class="title">About College</h1>
 			<ul class="breadcrumbs">
 				<li><a href="{{ route('admin.home')}}">Home</a></li> / 
-				<li><a href="#" class="active">Downloadable Files</a></li>
-			
+				<li><a href="#" class="active" >About College</a></li> /
+				<li><a href="#" class="active">About</a></li>
 			</ul>
 		
-        <!---Banner Form-->
-       @livewire('dl-form')
-        
 
-        <!--end of Banner Form--->
+        <!---About-->
+
+        @livewire('about.about-content')
+
+        <!--end of About--->
 
 			
 		</main>

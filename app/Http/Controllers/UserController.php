@@ -34,36 +34,36 @@ class UserController extends Controller
     //pass and get news id
     public function ShowNews(Request $request, $id = null){
     
-    return view('back.pages.editnews')->with(['id'=>$id]);
+    return view('back.pages.news.editnews')->with(['id'=>$id]);
     }
 
     //pass and get program id
     public function ShowProgram(Request $request, $id = null){
     
-        return view('back.pages.editprogram')->with(['id'=>$id]);
+        return view('back.pages.program.editprogram')->with(['id'=>$id]);
     }
   
         
     //pass and get announce id
     public function ShowAnnounce(Request $request, $id = null){
         
-        return view('back.pages.edit-announcement')->with(['id'=>$id]);
+        return view('back.pages.announce.edit-announcement')->with(['id'=>$id]);
     }
 
      //pass and get dept id
      public function ShowDept(Request $request, $id = null){
         
-        return view('back.pages.editdept')->with(['id'=>$id]);
+        return view('back.pages.dept.editdept')->with(['id'=>$id]);
     }
     //pass and get faculty id
     public function ShowFaculty(Request $request, $id = null){
         
-        return view('back.pages.editfaculty')->with(['id'=>$id]);
+        return view('back.pages.faculty.editfaculty')->with(['id'=>$id]);
     }
     //pass and get org id
     public function ShowOrg(Request $request, $id = null){
         
-        return view('back.pages.editorg')->with(['id'=>$id]);
+        return view('back.pages.org.editorg')->with(['id'=>$id]);
     }
     public function changeProfilePicture(Request $request)
     {

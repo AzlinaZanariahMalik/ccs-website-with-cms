@@ -1,10 +1,10 @@
 @extends('back.layouts.pages-layout')
-@section('title') {{'Downloadable Files'}} @endsection
+@section('title') {{'Announcement'}} @endsection
 
 @section('content')
 
 
-
+	<!-- end of sidebar menu -->
 	<!-- page body content -->
 	<section id="content">
 		<!-- header-->
@@ -13,18 +13,19 @@
 
 		<!-- main content -->
 		<main>
-			<h1 class="title">Downloadable Files</h1>
+			<h1 class="title">Announcement</h1>
 			<ul class="breadcrumbs">
 				<li><a href="{{ route('admin.home')}}">Home</a></li> / 
-				<li><a href="#" class="active">Downloadable Files</a></li>
+				<li><a href="{{ route('admin.announcement')}}" >Announcement</a></li> /
+				<li><a href="#" class="active">Edit Announcement</a></li>
 			
 			</ul>
 		
-        <!---Banner Form-->
-       @livewire('dl-form')
+        <!---Adding New News-->
+       @livewire('announce.edit-announce-form',['id' => Route::current()->parameter('id')])
         
 
-        <!--end of Banner Form--->
+        <!--end of Adding News--->
 
 			
 		</main>

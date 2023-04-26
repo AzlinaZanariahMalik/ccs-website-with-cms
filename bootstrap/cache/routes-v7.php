@@ -63,7 +63,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::ccGske7HMzTthRI8',
+            '_route' => 'generated::9hhpaVwuaXMXqJYy',
           ),
           1 => NULL,
           2 => 
@@ -83,7 +83,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::hWLrRYLTdunw5Tny',
+            '_route' => 'generated::bnAMK05OTPOpkqx2',
           ),
           1 => NULL,
           2 => 
@@ -161,7 +161,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::BaTRqXF7XhhWiruu',
+            '_route' => 'generated::NasfszppvLbaj6mw',
           ),
           1 => NULL,
           2 => 
@@ -181,7 +181,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::fXDKcP1c8QhyZ1iF',
+            '_route' => 'generated::DgB8CAFtmZwUnCPd',
           ),
           1 => NULL,
           2 => 
@@ -498,7 +498,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::0oPf8Q57xwosguiM',
+            '_route' => 'generated::HMdj6Y8eQayobbVH',
           ),
           1 => NULL,
           2 => 
@@ -1075,6 +1075,46 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'admin.settings',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/alumni/alumni-manage' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.alumni.alumni-manage',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/admin/alumni/verify-alumni' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'admin.alumni.verify-alumni',
           ),
           1 => NULL,
           2 => 
@@ -1772,7 +1812,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::ccGske7HMzTthRI8' => 
+    'generated::9hhpaVwuaXMXqJYy' => 
     array (
       'methods' => 
       array (
@@ -1784,7 +1824,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Controllers\\LivewireJavaScriptAssets@source',
         'controller' => 'Livewire\\Controllers\\LivewireJavaScriptAssets@source',
-        'as' => 'generated::ccGske7HMzTthRI8',
+        'as' => 'generated::9hhpaVwuaXMXqJYy',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1800,7 +1840,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::hWLrRYLTdunw5Tny' => 
+    'generated::bnAMK05OTPOpkqx2' => 
     array (
       'methods' => 
       array (
@@ -1812,7 +1852,7 @@ app('router')->setCompiledRoutes(
       array (
         'uses' => 'Livewire\\Controllers\\LivewireJavaScriptAssets@maps',
         'controller' => 'Livewire\\Controllers\\LivewireJavaScriptAssets@maps',
-        'as' => 'generated::hWLrRYLTdunw5Tny',
+        'as' => 'generated::bnAMK05OTPOpkqx2',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1937,7 +1977,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::BaTRqXF7XhhWiruu' => 
+    'generated::NasfszppvLbaj6mw' => 
     array (
       'methods' => 
       array (
@@ -1960,7 +2000,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::BaTRqXF7XhhWiruu',
+        'as' => 'generated::NasfszppvLbaj6mw',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1976,7 +2016,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::fXDKcP1c8QhyZ1iF' => 
+    'generated::DgB8CAFtmZwUnCPd' => 
     array (
       'methods' => 
       array (
@@ -1998,7 +2038,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::fXDKcP1c8QhyZ1iF',
+        'as' => 'generated::DgB8CAFtmZwUnCPd',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3065,7 +3105,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::0oPf8Q57xwosguiM' => 
+    'generated::HMdj6Y8eQayobbVH' => 
     array (
       'methods' => 
       array (
@@ -3087,7 +3127,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::0oPf8Q57xwosguiM',
+        'as' => 'generated::HMdj6Y8eQayobbVH',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3302,7 +3342,7 @@ app('router')->setCompiledRoutes(
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'back.pages.announcement',
+        'view' => 'back.pages.announce.announcement',
         'data' => 
         array (
         ),
@@ -3349,7 +3389,7 @@ app('router')->setCompiledRoutes(
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'back.pages.add-announce',
+        'view' => 'back.pages.announce.add-announce',
         'data' => 
         array (
         ),
@@ -3435,7 +3475,7 @@ app('router')->setCompiledRoutes(
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'back.pages.about',
+        'view' => 'back.pages.aboutcollege.about',
         'data' => 
         array (
         ),
@@ -3482,7 +3522,7 @@ app('router')->setCompiledRoutes(
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'back.pages.vision',
+        'view' => 'back.pages.aboutcollege.vision',
         'data' => 
         array (
         ),
@@ -3529,7 +3569,7 @@ app('router')->setCompiledRoutes(
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'back.pages.mission',
+        'view' => 'back.pages.aboutcollege.mission',
         'data' => 
         array (
         ),
@@ -3576,7 +3616,7 @@ app('router')->setCompiledRoutes(
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'back.pages.goal',
+        'view' => 'back.pages.aboutcollege.goal',
         'data' => 
         array (
         ),
@@ -3623,7 +3663,7 @@ app('router')->setCompiledRoutes(
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'back.pages.collegehistory',
+        'view' => 'back.pages.aboutcollege.collegehistory',
         'data' => 
         array (
         ),
@@ -3670,7 +3710,7 @@ app('router')->setCompiledRoutes(
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'back.pages.academicprogram',
+        'view' => 'back.pages.program.academicprogram',
         'data' => 
         array (
         ),
@@ -3717,7 +3757,7 @@ app('router')->setCompiledRoutes(
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'back.pages.addprogram',
+        'view' => 'back.pages.program.addprogram',
         'data' => 
         array (
         ),
@@ -3897,7 +3937,7 @@ app('router')->setCompiledRoutes(
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'back.pages.department',
+        'view' => 'back.pages.dept.department',
         'data' => 
         array (
         ),
@@ -3944,7 +3984,7 @@ app('router')->setCompiledRoutes(
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'back.pages.adddept',
+        'view' => 'back.pages.dept.adddept',
         'data' => 
         array (
         ),
@@ -4030,7 +4070,7 @@ app('router')->setCompiledRoutes(
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'back.pages.facultyandstaff',
+        'view' => 'back.pages.faculty.facultyandstaff',
         'data' => 
         array (
         ),
@@ -4163,7 +4203,7 @@ app('router')->setCompiledRoutes(
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'back.pages.pythons',
+        'view' => 'back.pages.org.pythons',
         'data' => 
         array (
         ),
@@ -4249,7 +4289,7 @@ app('router')->setCompiledRoutes(
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'back.pages.certifications',
+        'view' => 'back.pages.cert.certifications',
         'data' => 
         array (
         ),
@@ -4296,7 +4336,7 @@ app('router')->setCompiledRoutes(
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'back.pages.addnews',
+        'view' => 'back.pages.news.addnews',
         'data' => 
         array (
         ),
@@ -4381,7 +4421,7 @@ app('router')->setCompiledRoutes(
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'back.pages.newsmanagement',
+        'view' => 'back.pages.news.newsmanagement',
         'data' => 
         array (
         ),
@@ -4428,7 +4468,7 @@ app('router')->setCompiledRoutes(
       'fallback' => false,
       'defaults' => 
       array (
-        'view' => 'back.pages.highlight-news',
+        'view' => 'back.pages.news.highlight-news',
         'data' => 
         array (
         ),
@@ -4600,6 +4640,100 @@ app('router')->setCompiledRoutes(
       'defaults' => 
       array (
         'view' => 'back.pages.settings',
+        'data' => 
+        array (
+        ),
+        'status' => 200,
+        'headers' => 
+        array (
+        ),
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.alumni.alumni-manage' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/alumni/alumni-manage',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:web',
+          2 => 'PreventBackHistory',
+        ),
+        'uses' => '\\Illuminate\\Routing\\ViewController@__invoke',
+        'controller' => '\\Illuminate\\Routing\\ViewController',
+        'as' => 'admin.alumni.alumni-manage',
+        'namespace' => NULL,
+        'prefix' => 'admin/alumni',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+        'view' => 'back.pages.alumni.alumnimanage',
+        'data' => 
+        array (
+        ),
+        'status' => 200,
+        'headers' => 
+        array (
+        ),
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'admin.alumni.verify-alumni' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/alumni/verify-alumni',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth:web',
+          2 => 'PreventBackHistory',
+        ),
+        'uses' => '\\Illuminate\\Routing\\ViewController@__invoke',
+        'controller' => '\\Illuminate\\Routing\\ViewController',
+        'as' => 'admin.alumni.verify-alumni',
+        'namespace' => NULL,
+        'prefix' => 'admin/alumni',
+        'where' => 
+        array (
+        ),
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+        'view' => 'back.pages.alumni.verify',
         'data' => 
         array (
         ),

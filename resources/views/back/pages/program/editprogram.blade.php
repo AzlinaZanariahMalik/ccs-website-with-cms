@@ -1,10 +1,9 @@
 @extends('back.layouts.pages-layout')
-@section('title') {{'Downloadable Files'}} @endsection
+@section('title') {{'Edit Program'}} @endsection
 
 @section('content')
 
-
-
+	<!-- end of sidebar menu -->
 	<!-- page body content -->
 	<section id="content">
 		<!-- header-->
@@ -13,18 +12,20 @@
 
 		<!-- main content -->
 		<main>
-			<h1 class="title">Downloadable Files</h1>
+			<h1 class="title">Edit Academic Program</h1>
 			<ul class="breadcrumbs">
 				<li><a href="{{ route('admin.home')}}">Home</a></li> / 
-				<li><a href="#" class="active">Downloadable Files</a></li>
-			
-			</ul>
+                <li><a href="{{ route('admin.academic-program')}}">Academic Program</a></li> / 
+				<li><a href="#" class="active" >Edit Program</a></li> 
 		
-        <!---Banner Form-->
-       @livewire('dl-form')
-        
+			</ul>
+		 
 
-        <!--end of Banner Form--->
+        <!---Academic Program-->
+
+        @livewire('program.edit-program', ['id' => Route::current()->parameter('id')] )
+
+        <!--end of Academic Program--->
 
 			
 		</main>
@@ -36,4 +37,5 @@
 	</section>
 	<!-- end of body of page content -->
 
+Page 
 @endsection

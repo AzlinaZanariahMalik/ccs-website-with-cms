@@ -1,5 +1,7 @@
 <?php return array (
   'add-banner' => 'App\\Http\\Livewire\\AddBanner',
+  'alumni.user-management' => 'App\\Http\\Livewire\\Alumni\\UserManagement',
+  'alumni.verify-account' => 'App\\Http\\Livewire\\Alumni\\VerifyAccount',
   'announce.announce-form' => 'App\\Http\\Livewire\\Announce\\AnnounceForm',
   'announce.announcement-management' => 'App\\Http\\Livewire\\Announce\\AnnouncementManagement',
   'announce.edit-announce-form' => 'App\\Http\\Livewire\\Announce\\EditAnnounceForm',

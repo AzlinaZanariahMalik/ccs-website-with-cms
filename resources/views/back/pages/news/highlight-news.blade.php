@@ -1,5 +1,5 @@
 @extends('back.layouts.pages-layout')
-@section('title') {{'Profile'}} @endsection
+@section('title') {{'Highlight News'}} @endsection
 
 @section('content')
 
@@ -14,31 +14,22 @@
 
 		<!-- main content -->
 		<main>
-			<h1 class="title">Profile</h1>
+			<h1 class="title">News Management</h1>
 			<ul class="breadcrumbs">
+				<li><a href="{{ route('admin.home')}}">Home</a></li> / 
+				<li><a href="{{ route('admin.news.news-management')}}">News</a></li> /
+                <li><a href="active">Highlight News</a></li>
 			
-				<li><a href="#" class="active">Profile Setting</a></li>
 			</ul>
-		<!---profile--->
-			
-        @livewire('profile.user-profile-header')
-	     
-        <!---end of profile---->
-
-        <!---personal details-->
-
-        @livewire('profile.user-personal-details')
-
-        <!--end of personal details--->
-
 		
+   
+       @livewire('news.highlight')
+	   
 
-        <!--change password----->
+     
 
-        @livewire('profile.user-change-password-form')
 
-        <!--end of change password--->
-				
+
 			
 		</main>
 		<!-- end of main content -->
@@ -50,4 +41,3 @@
 	<!-- end of body of page content -->
 
 @endsection
- 

@@ -1,10 +1,11 @@
 @extends('back.layouts.pages-layout')
-@section('title') {{'Downloadable Files'}} @endsection
+@section('title') {{'Verify Alumni'}} @endsection
 
 @section('content')
 
 
 
+	<!-- end of sidebar menu -->
 	<!-- page body content -->
 	<section id="content">
 		<!-- header-->
@@ -13,20 +14,15 @@
 
 		<!-- main content -->
 		<main>
-			<h1 class="title">Downloadable Files</h1>
+			<h1 class="title">Alumni</h1>
 			<ul class="breadcrumbs">
-				<li><a href="{{ route('admin.home')}}">Home</a></li> / 
-				<li><a href="#" class="active">Downloadable Files</a></li>
+                <li><a href="{{ route('admin.alumni.alumni-manage')}}">Alumni</a></li> /
+				<li><a href="#" class="active" >Verify Alumni Accounts</a></li> 
 			
 			</ul>
-		
-        <!---Banner Form-->
-       @livewire('dl-form')
-        
 
-        <!--end of Banner Form--->
+            @livewire('alumni.verify-account')
 
-			
 		</main>
 		<!-- end of main content -->
 		<!--footer section-->
