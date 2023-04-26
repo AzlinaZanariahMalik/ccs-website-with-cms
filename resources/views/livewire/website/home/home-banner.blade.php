@@ -1,35 +1,40 @@
-<div>
-<!--<section id="parallax">
-    <div class="row justify-content-center">
-          <div class="gradient"></div>   
-            <div class="parallax_bg center-block img-responsive"> <img src="{{ url('storage/photos/banner/'. $banner->banner_image)}}"></div> 
-            <div class="center-text">
-                <h1>{{$banner->banner_tagline}}</h1>
-                
-            </div>
-    </div>      
+@push('styles')
+<style>
  
-</section>-->
-<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  .caritembg{
+    background-color:#1d7e43;
+  }
+</style>
+@endpush
+
+<div>
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="10000">
-    <img src="{{ url('storage/photos/banner/'. $banner->banner_image)}}">
-    </div>
-    <div class="carousel-item" data-bs-interval="2000">
-    <img src="{{ url('storage/photos/banner/'. $banner->banner_image)}}">
-    </div>
-    <div class="carousel-item">
-    <img src="{{ url('storage/photos/banner/'. $banner->banner_image)}}">
-    </div>
+  @if(!empty($banner))  
+ <!--fetch  table database---> 
+    @foreach($banner as $key => $ban)
+        <div class="carousel-item caritembg {{$key == 0 ? 'active' : '' }}">
+          <img src="{{ url('storage/photos/banner/'. $ban->banner_image)}}" style="width:100%; height:auto; " class="d-block w-100">
+        </div>
+      @endforeach
+  @elseif(empty($banner))
+  <div class="carousel-item active">
+      <img src="{{ url('/images/pythons.jpg')}}" style="width:1920px; height:320px;" class="d-block w-100" >
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+@endif 
+    
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+
+
 </div>
  

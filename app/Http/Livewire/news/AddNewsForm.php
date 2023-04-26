@@ -5,42 +5,63 @@ namespace App\Http\Livewire\News;
 use Livewire\Component;
 use Livewire\withFileUploads;
 use App\Models\News;
-
+use App\Models\NewsImage;
+use Carbon\Carbon;
  
 
 class AddNewsForm extends Component
 {
     use WithFileUploads;
-    public $news_title, $post, $feature_image;
+    public $news_title, $post, $feature_image, $images = [];
 
     public function CreateNews(){
         $this->validate([
             'news_title'=>['required','max:150'],
-            'post'=>['required','min:350'],
-            'feature_image'=>['mimes:jpeg,png,jpg,gif' ]
+            'post'=>['required','min:150'],
+            'feature_image'=>['mimes:jpeg,png,jpg,gif' ],
+            
+
            
         ]); 
 
-        $data = [
-            'news_title'=> $this->news_title,
-            'post'=> $this->post,
-            'user_id'=> auth()->user()->id,
-            'status'=> auth()->user()->publish_permission,
-            'feature_image'=>$this->feature_image->hashName(),
-          
-            $this->created_at = now()
-        ];
+        $uniqID = Carbon::now()->timestamp .uniqid();
+
+        $news = new News();
+        $news->unique_id = $uniqID;
+        $news->user_id = auth()->user()->id;
+        $news->news_title = $this->news_title;
+        $news->post = $this->post;
+        $news->status = auth()->user()->publish_permission;
+        $news->feature_image = $this->feature_image->hashName();
+        $this->created_at = Carbon::now();
+        
+        
         if(!empty($this->feature_image)){
             $this->feature_image->store('public/photos/news');
         }
+        foreach($this->images as $key=> $image){
+            $pimage = new NewsImage();
+            $pimage->news_unique_id = $uniqID;
+           
+            $imageName = Carbon::now()->timestamp . $key . '.' .$this->images[$key]->extension();
+            $this->images[$key]->storeAs('public/photos/news', $imageName);
+            $pimage->image = $imageName;
+            $pimage->save();
+            
+
+        }
+
+        //create news
+        $news->save();
+
+        
  
-        //create program
-        News::create($data);
+       
         $this->resetForms();
 
         //show success message
         session()->flash('success', 'Successfully Added News');
-        //remove alert success message: NOT WORKING
+        //remove alert success message
         $this->emit('alert_remove');
         //function for refresh page
     }
@@ -49,6 +70,7 @@ class AddNewsForm extends Component
         $this->news_title = null;
         $this->post = null;
         $this->feature_image = null;
+        $this->images = null;
       
         
 

@@ -15,8 +15,10 @@
               <div class="col-md-8">
                 <div class="card-body">
                   <h5 class="card-title">{{$newsitem->news_title}}</h5>
-                  <p class="card-text">{{ Str::limit($newsitem->post, '100')}}<a class="readmore"> Read More </a> </p>
-                 
+                  <p class="text-muted">{{ $newsitem->created_at->format('M d, Y H:i A')}}</p>
+                  <p class="card-text">{!! Str::limit($newsitem->post, '350') !!}</p>
+                  <a href="{{route('news-post',[$newsitem->id,preg_replace('/\+/','-',urlencode($newsitem->news_title))])}}" class="readmore"> Read More </a> 
+                  
                 </div>
               </div>
             </div>

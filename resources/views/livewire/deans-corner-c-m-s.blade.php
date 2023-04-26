@@ -1,4 +1,4 @@
-<div wire:ignore>
+<div>
 <div class="data">
 		<div class="content-data"> 
             <div class="info">
@@ -27,9 +27,9 @@
                             @enderror
                            
                        </div>
-                       <div class="col-md-12 ">
+                       <div class="col-md-12" wire:ignore>
                             <label class="form-label">Dean's Corner Description</label>
-                            <textarea type="textarea" cols="80" class="form-control" rows="12" id="editor"  placeholder="Details....." wire:model="dean_desc">{{$dean_desc}}
+                            <textarea type="textarea" cols="80" class="form-control" rows="12" id="dean_desc"  wire:model.lazy="dean_desc">{{$dean_desc}}
                             </textarea>
                         
                           
@@ -39,6 +39,31 @@
                            
                        </div>
 
+                    
+                        <br>
+                        <div class="col-12">
+                            <button class="btn btn-main" type="submit"><span wire:loading.remove >Update</span><span wire:loading >Updating...</span></button>
+                        </div>
+                </form>
+               
+            </div>
+
+            <div class="info">
+                    
+                <form wire:submit.prevent="UpdateDeanCornerImg()" method="post" class="row g-3" enctype="multipart/form-data">
+                @csrf
+                    
+                    @if(Session::get('successimg'))
+                        <div class="alert alert-success"role="alert">
+                            {{ Session::get('success')}}
+                            <button style="float:right" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @elseif (Session::get('failimg'))
+                        <div class="alert alert-danger"role="alert">
+                            {{ Session::get('fail')}}
+                        </div>
+                    @endif    
+                        
                         
                         <div class="col-md-12">
                             
@@ -75,9 +100,11 @@
 @push('scripts') 
 <script>
     ClassicEditor
-        .create( document.querySelector( '#editor' ) )
+        .create(document.querySelector('#dean_desc'),{
+          removePlugins: ['CKFinderUploadAdapter', 'CKFinder', 'EasyImage', 'ImageCaption', 'ImageStyle', 'ImageToolbar', 'ImageUpload', 'Table', 'MediaEmbed'],
+        })
         .then(editor => {
-            editor.model.document.on('change:data', () => {
+            editor.model.document.on('change:data', (e) => {
                 @this.set('dean_desc', editor.getData());
             })
         })

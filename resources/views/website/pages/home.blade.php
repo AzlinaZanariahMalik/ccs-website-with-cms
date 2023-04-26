@@ -2,82 +2,8 @@
 @section('title') {{'Home'}} @endsection
 
 @section('content')
- <!---HEADER NAVBAR---->
- <div class="header-background fixed-top">
-    <div id="nav" class="sticky-nav">
-     
-    <nav class="navbar navbar-expand-lg sticky-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="{{ url('storage/photos/logo-icon/'. College_info()->website_logo )}}" width="105" height="105" class="d-inline-block align-top" alt="">
-        </a>
-        
-        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="toggler-icon top-bar"></span>
-            <span class="toggler-icon middle-bar"></span>
-            <span class="toggler-icon bottom-bar"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto">
+ 
 
-          <li class="nav-item">
-              <a class="nav-link " href="/">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="/about-ccs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                About CCS
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/vision-mission">Vision Mission</a></li>
-                <li><a class="dropdown-item" href="/goals">College Goals</a></li>
-                <li><a class="dropdown-item" href="/history">History</a></li>
-                <li><a class="dropdown-item" href="/department">Department</a></li>
-                <li><a class="dropdown-item" href="/faculty-and-staff">Faculty & Staff</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Academic Program
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/undergraduate">Undergraduate Program</a></li>
-                <li><a class="dropdown-item" href="/graduate">Graduate Program</a></li>
-                <li><a class="dropdown-item" href="#">Undergraduate Admission</a></li>
-                <li><a class="dropdown-item" href="#">Graduate Admission</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/news">News</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Pythons
-              </a>
-              <ul class="dropdown-menu">
-                
-                <li><a class="dropdown-item" href="#">Activites </a></li>
-                <li><a class="dropdown-item" href="/organization">Organizations</a></li>
-             
-              </ul>
-            </li>
-           <li class="nav-item">
-              <a class="nav-link" href="#">Alumni</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-            <li class="nav-item" style="filter: brightness(0) invert(1);">
-              <a class="nav-link" href="#"><img src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASdJREFUSEvVlcENwjAMRX83gUmASYBJgEmASYBJgElAT7IlF5I0KukBX6qW2M/fdkynia2bOL5KgJmkjaSFpKWkh6SrpKekk70P5pcD7CXtCt7AzpI4V7QU4GIZ43iwrMkcRSjh6XC+r0qETwAlOZr8rQVP+QMhEZ4kkVUSARy+WzSyIruSoQYI5comEwFedxqIQ42hFtVZFRHghwkOpMZcRbYXEUB5KNO8dgTtPH6UCb8v+xVAwJdFTY58/OjjWdNgz9SnLtu3Vk2uAowdU9Rk+zb2ovn0+G2vumheVx9X3pF+C5fO10XcU0wQfeNZnKL449Cy88zXNqpZyNC6phS+rglKIBR5SeJOSkJa/OEUIS0AKIuQ3qppBXAIJe3tsZaA5HL8f8AbD75NGeBb0w4AAAAASUVORK5CYII='}}"/></a>
-            </li>
-          </ul>
-          
-        </div>
-      </div>
-    </nav>
-    </div>
-
-  </div>
- <!---END OF HEADER NAVBAR---->
  
   <!----Banner--------------------------------------------->
   @livewire('website.home.home-banner')
@@ -87,10 +13,10 @@
 <div class="container-fluid  date-section">
   <div class="container-fluid ">
     <div class="row position-relative">
-     <div class="card mb-3 position-absolute end-0" style="border-top: 10px solid white;border-bottom: 100px solid white;
-     max-width: 18rem; top:-3rem; padding:10px;  transform: skew(-20deg);">
+     <div class="card mb-3 position-absolute end-0 date-time" style="border-top: 10px solid white;border-bottom: 20px solid white;
+     max-width: 15rem; top:-3rem; padding:10px; transform: skew(-20deg); margin-right:-1rem; overflow:hidden;">
        <div class="date text-center" style="transform: skew(20deg);" >
-       <h5 id="current_date"></h5>
+       <h6 id="current_date"></h6>
        
 
        </div>
@@ -121,8 +47,8 @@
 <!----End of Highlist News/Feature------------------------------------------>
 
   
-  <!--Grid Dean's Corner and News---------------------->
-  <div class="container p-3">
+<!--Grid Dean's Corner and News---------------------->
+  <div class="container p-3 corner">
     <div class="row gx-5 ">
       
       <div class="col-md-4 " id="academic">
@@ -131,12 +57,9 @@
         </a>
         
             
-          <h2 class="p-3 web-title" >Announcement</h2>
+          <h2 class="p-3 web-title text-center" >Announcement</h2>
          
-            <div class=" justify-content-center">
-             
-             
-            </div>
+           @livewire('website.home.home-announce')
 
          
       </div>
@@ -151,41 +74,135 @@
     
     </div>
   </div>
-  <!--END OF Grid Dean's Corner and News--------------> 
-  @livewire('website.home.home-about-c-c-s')
- <!----About------------------------------------------>
+<!----About------------------------------------------>
 
-<!----End of About------------------------------------------>
-
-  <!----Academic Program------------------------------------------>
-<div class="container-fluid program-section">
-  <div class="container">
-     
-    <div class="row ">
-    <div class="card mb-3 academic-title-program">
-    
-          <div class="card-group">
-            <div class="card">  
-              <div class="card-body" style="background-color:#0d3a0d; color:#fff">
-                <h5 class="card-title text-center">Undergraduate</h5>
-                
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-body" style="background-color:#696269; color:#fff">
-                <h5 class="card-title text-center">Graduate</h5>
-                
-              </div>
-            </div>
-          </div>
-          
+<div class="container p-3 about-section">
+    <div class="row gx-5 ">
+      
+      <div class="col-md-8 ">
+        @livewire('website.home.home-about-c-c-s')
       </div>
-    </div> 
-  </div>
-  </div>
-<!----Academic Program------------------------------------------>
- 
 
+      <div class="col-md-4 about-link">
+        <a href="/vision-mission" class="p-3 web-title-link"> <h6 >Vision Mission</h6></a>
+        <a href="/goals" class="p-3 web-title-link"> <h6 >College Goal</h6></a>
+        <a href="/history" class="p-3 web-title-link"> <h6 >History</h6></a>
+        <a href="/department" class="p-3 web-title-link"> <h6 >Department</h6></a>
+        <a href="/faculty-and-staff" class="p-3 web-title-link"> <h6 >Faculty & Staff</h6></a>
+      </div>
+    
+    </div>
+  </div>
  
+<!----End of About------------------------------------------>
+<br><br>
+
+<!----Academic Program------------------------------------------>
+<div class="container-fluid program-section">
+
+  @livewire('website.home.home-acedemic-program')
+  
+</div>
+
+
+<!----Academic Program------------------------------------------>
+<!--Organization Logo---------------------->
+
+  <div class="container org">
+    <div class="justify-content-center align-items-center">
+    </div>
+    
+    @livewire('website.home.home-orgs')
+  </div>
+  <div class="container">
+    <div class="justify-content-center align-items-center">
+    </div>
+     @livewire('website.page.page-certificate')
+    
+  </div>
+ 
+<!--End of Orgs----------------------------------------> 
+<br>
+<div class="container testimonial">
+  <div class="text-center"><h2>What Our Pythons Says</h2></div>
+  <br>
+    <!-- Carousel wrapper -->
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+    
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+        
+          <span class="text-muted qoute-text">
+          
+            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus et deleniti
+            nesciunt sint eligendi reprehenderit reiciendis, quibusdam illo, beatae quia
+            fugit consequatur laudantium velit magnam error. Consectetur distinctio fugit
+            doloremque."
+          </span>
+         <br><br>
+          <h5 class="text-center">Roger Floyd</h5>
+          <p class="text-center">BS IT</p>
+          <h1 class="text-end qoute">„</h1>
+        </div>
+        
+      </div>
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+         
+          <span class="text-muted">
+          
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus et deleniti
+            nesciunt sint eligendi reprehenderit reiciendis, quibusdam illo, beatae quia
+            fugit consequatur laudantium velit magnam error. Consectetur distinctio fugit
+            doloremque.
+          </span>
+          <br><br>
+          <h5 class="text-center">Roger Floyd</h5>
+          <p class="text-center">BS IT</p>
+          <h1 class="text-end qoute">„</h1>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+    <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+         
+          <span class="text-muted">
+          
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus et deleniti
+            nesciunt sint eligendi reprehenderit reiciendis, quibusdam illo, beatae quia
+            fugit consequatur laudantium velit magnam error. Consectetur distinctio fugit
+            doloremque.
+          </span>
+          <br><br>
+          <h5 class="text-center">Roger Floyd</h5>
+          <p class="text-center">BS IT</p>
+          <h1 class="text-end qoute">„</h1>
+        </div>
+      </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+    
+    
+  </div>
+
+  <br><br>
 @endsection
  

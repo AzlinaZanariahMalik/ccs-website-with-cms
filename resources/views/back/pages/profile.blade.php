@@ -9,15 +9,19 @@
 		<a href="{{ route('admin.home')}}" class="logo-sidebar"> <img src="{{ url('/images/CCS_logo.png') }}" width="53" height="53" class="d-inline-block align-top" alt=""> &nbsp&nbsp Content Management</a>
 		<ul class="side-menu">
 			<li><a href="{{ route('admin.home')}}"><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAHlJREFUSEtjZKAxYKSx+Qx0t2A/AwODAw5fPWBgYFCEyhGrDsMH/wkEGczHxKobtQBngMITD3oqIjZsiVVH/ziYz8DAkIDD4wcYGBgcoXLEqqN/RqN6yYEeycTmUGLV0T+SiU1+xKob9cEgLCqIzaHEqhuGOZnqRQUAZX0oGXY3cFsAAAAASUVORK5CYII='}}"/> Dashboard</a></li>
-            @if(auth()->user()->user_type == 1)
+            <li><a href="{{ route('admin.files-management')}}" class=""><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAJZJREFUSEvtldsNgCAMRQ+b6CZupk7iKm6im2iaqFGCFESiH/SnCY97oClcQ+YwmfVxARqgBST7ogc67YAuwARU2sZtXoW4AEuAuAjLLSW8kKcA2SflUSEpADm9CkkFqJA3ADbkovkU4OuDAlBfSSlRKRGE/Kb/fmgxhmPfZAbq8+CdZQ4RrrbrjZv5SD7iE9NXGz1mwQrwZSIZGrnnSwAAAABJRU5ErkJggg=='}}"/>&nbsp Files</a></li>
+			@if(auth()->user()->user_type == 1)
 			<li><a href="{{ route('admin.user-manage')}}" class=""><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASFJREFUSEvtldERAUEQRPsyIRJEgkgQCSIhE0RCvapttcfO7d1VXZUP+4fZeTPdM6vRxKeZOL9+GnCUdJB071Kh1sFG0lrSLCU5S9pLWkq6pOSrLkgXgES7QnWnVDkAwHRBbPFEAC7egjtIsk1VO2YedREBkAaNowOATugCufz5Kz4CWOO+AHy4loLHSEQeS/JMSQdLxL3IZJvq3/EEwCCTHUySRdKZRB7T3CO+B4onvT2ovSB4xKQxxt6R4rhGHuSV5zCqxcxHNvvEehm/IJ8AqmE8qbB2gHmLc79ahn8CPNe15P6dboBwKAxvWl3kgNpy1XbC93No67l2BX2rL3XhvXgXnnfAu+KJGALpvQemD0nu2PBVrv0fjIG17vwBVQlfq+FBGdSNTXQAAAAASUVORK5CYII='}}"/>&nbsp Users</a></li>
+			
+            <li><a href="{{ route('admin.announcement')}}" class=""><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAPBJREFUSEvVld0NwjAQg91JgEmASQqTAJPAJtBJgElARucqSktzUZOH5rFS/dm5nzSofJrK+lgcYA3gAOAF4MbbKZFAolsAO7tyAjZzARRrzfFYKX/mcxPI7cnRHG5AjmjIHQAY+QqAgmG6j8Ot64ruQZGqAGKnqk+xBMsHVK8Bu4j9rWksXoN/3cjdwvbNPe5Be9psHAE8LCWhqeMCyH2/vEyVw8jrnAK5AGcTovOLJZBzJeN3GuDiU/36QU0tOzqlkA6FCHsbeCyZIO73QMuODrWnBNxHqQZ1SSWIfxBsBaDTqzVV7VxAqnNmJ8gGfAG7gSwZxtCN5AAAAABJRU5ErkJggg=='}}"/>&nbsp Announement</a></li>
 			<li class="divider" data-text="Content Manage">Content Manage</li>
 			<li>
 				<a href="" class="active"><img class="icon" src="{{ 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAARBJREFUSEvFlYsNwjAMRK+bwCTAJjAJMAkwCTAJMAnoVUmUhDQfNQhLVaqm8fl8tjPoxzb82L9qANaSeFZmfUq6SXqZlfdJywEsJJ2M05wPADeSWL9sCuAgad+QPpxfJHEusBRAq3Pf4TEGiQFIy6Mh8vhXmOyMNuNeDHAt5Nz+/84EAcjS7vsAWyNqTVHkADiP6GN1+QBzch8H5bTwAShJWPQwoodFwABxEblHipwOPoOeAC54H6BUQT7jkshnU67NIteUKYEkRWagwaKHBjQbLAIGNcOthoGroFQnzx0VQZOlAPhW09FTaSwOOw7CApCWcR0I66P/7cKxQcDGPvbKZI9Ovc+9MnvMpKpLfxbQBxqfOBnrSWS3AAAAAElFTkSuQmCC' }}"/>&nbsp About College 
                 <img class="icon-right" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAJJJREFUSEvt1MEJgDAQRNFvJ9qJdmIn2ol2YiuWIgMRxEOyExAUzMVLmGdmow0Pr+bhfH6g2PCrKpqBFdiLr33ZED2BwqcUPjhIFGiBDdBTJwgjUUCHrkIcoApxARupBRagT/PocrfKBTSHcLhgB7DDHaAq3AHGVI2+gWzn93k4FQnRr8JaDmAFn5t/oFjb9ys6AAkuHBlC5x93AAAAAElFTkSuQmCC'}}"/></a>
 				<ul class="side-dropdown">
                     <li><a href="{{ route('admin.about')}}">About</a></li>
-					<li><a href="{{ route('admin.vision-mission')}}">Vision Mission</a></li>
+					<li><a href="{{ route('admin.vision')}}">Vision</a></li>
+					<li><a href="{{ route('admin.mission')}}">Mission</a></li>
                     <li><a href="{{ route('admin.goal')}}">College Goal</a></li>
 					<li><a href="{{ route('admin.college-history')}}">History</a></li>
 					<li><a href="{{ route('admin.department')}}">Department</a></li>
@@ -33,14 +37,7 @@
 			@if(auth()->user()->rank == 1)
 			<li><a href="{{ route('admin.deans-corner')}}"><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAASZJREFUSEvtlDFuAjEQRR9dcoigcIIUXCCUdKQKHeQkcAzSJVUuAYQITgEFHIGC1KCPbGkwXmxW2gpGsrSrHb/nGdtbo+KoVcznNgQvwBvQAR6BiRnbVIuLWmShei6KOTAFxsAilmQFudAimaqx1S2VaAX7VLlXfj+yraAJvLtRvxJm03+AT+AvFNiktpE9ZMj+gZEDr2x+6h4I7quSNAzBtFrBJTmLmGANfAMzN/ykJ6DrhDsHVjt8DIEe0EhVYDdbC9DEUOYZz0AfGBjoyaJjFYQC/74xlek5BHtHaUHGXh9TkoJf4NXRvtxKc+FZAsElKROt4GAU/q5jm3dJqD35COGXLpo9JapIx08hsYaACp0u3Vi1Mhqpi1amTSdz7oJkCytv0QEWKjcZl6jltgAAAABJRU5ErkJggg=='}}"/>&nbsp Dean's Corner</a></li>
 			@endif
-			<li><a href=""><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAKJJREFUSEvdVNsNgCAMPEZxE1dxEnUUJ3EVN9HUpEklkEKxauST0Hs1XIDzCc74+BfBCqA3RrYB6FKzMqLdCM5jybhfI0ipYYc5UXx/eac9lqk9RpBb1W0O3Am0WL+xA8uXqNqBO0FpCcrfX+XAncAS0QCASo9Kk84pUiptadNY0AxgigmoqseGyiY8crAweExgiUWdKV2mCqT1hxlAG3R3cAB7QSwZWH7E+QAAAABJRU5ErkJggg=='}}"/></i>&nbsp News
-			<img class="icon-right" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAJJJREFUSEvt1MEJgDAQRNFvJ9qJdmIn2ol2YiuWIgMRxEOyExAUzMVLmGdmow0Pr+bhfH6g2PCrKpqBFdiLr33ZED2BwqcUPjhIFGiBDdBTJwgjUUCHrkIcoApxARupBRagT/PocrfKBTSHcLhgB7DDHaAq3AHGVI2+gWzn93k4FQnRr8JaDmAFn5t/oFjb9ys6AAkuHBlC5x93AAAAAElFTkSuQmCC'}}"/></a>
-				<ul class="side-dropdown">
-                    <li><a href="{{ route('admin.news.add-news')}}">Add News</a></li>
-					<li><a href="{{ route('admin.news.news-management')}}">News Management</a></li>
-				</ul>
-				</a>
-			</li>
+			<li><a href="{{ route('admin.news.news-management')}}"><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAKJJREFUSEvdVNsNgCAMPEZxE1dxEnUUJ3EVN9HUpEklkEKxauST0Hs1XIDzCc74+BfBCqA3RrYB6FKzMqLdCM5jybhfI0ipYYc5UXx/eac9lqk9RpBb1W0O3Am0WL+xA8uXqNqBO0FpCcrfX+XAncAS0QCASo9Kk84pUiptadNY0AxgigmoqseGyiY8crAweExgiUWdKV2mCqT1hxlAG3R3cAB7QSwZWH7E+QAAAABJRU5ErkJggg=='}}"/></i>&nbsp News</a></li>
 			@if(auth()->user()->user_type == 1)
             <li><a href="{{ route('admin.pythons')}}"><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAJFJREFUSEvtldENgCAMRI/NXMXN3MTRNBhpsJb0AkEx0b/Gcs87KgR0fkJnfViArRF60XwFEA0kF2yExf6SwOMADfRq2UbWgSc4fkTe5FIOVgCTUkoRshGl5QuAORb5Hlg/WC1AtFkAG1Hed2gPBdARUh9HNZ2+f4CcoN7EsO+pKWLFrL4boEWsuJa9UKrh3wfstfctGfek13QAAAAASUVORK5CYII='}}"/>&nbsp Pythons</a></li>
             <li><a href=""><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAT1JREFUSEu1ldFxAjEMRJdOSCVAJUkqASpJqISkkqSTMI9hb3SOZXuYO/14uDtp17uS2Gjl2KxcX6MAW0lHSfsHoV9J75I4mzECQPGfpMpLD2QE4EPSWwJwlnRqXWEE4K9RAIm4RRojAMiDTLVYBAAJMLgWi0gE+2vlFrA/LGGymUezu8yd1POA7vkM2tjwmMdsfGUuZwDWvTSxBsAzvrvUWrYEKPUudS4B+B7p4oTPfIkAcWIzA2s3QJ0INMuNADYRPWFRiwzAILQzvk01IoAHqrVfvJOy6bUKk3cRgF5HS9hnXWGtW++pQ9xrRwB3Dm3JKn4mTHKqUZrsifW+T/u7QB8y2UbFteD+NhCnFx8nkr2GZ/+WX23QSKQTYmJPruFBi4XMcBcYwth/k5zfj99xnczI9HZRj3n3/eoAN151TxleC8PLAAAAAElFTkSuQmCC'}}"/>&nbsp Alumni</a></li>
@@ -81,11 +78,7 @@
 
         <!--end of personal details--->
 
-		<!---Qualification-->
-
-		@livewire('profile.qualification')
-
-		<!--end of Qualification--->
+		
 
         <!--change password----->
 
@@ -104,23 +97,4 @@
 	<!-- end of body of page content -->
 
 @endsection
-@push('scripts') 
-    <script>
-       $('#userChangeProfilePicture').ijaboCropTool({
-			preview : '',
-			setRatio:1,
-			allowedExtensions: ['jpg', 'jpeg'],
-			buttonsText:['Crop','Cancel'],
-			buttonsColor:['#1d7e43','#F1F0F6', -15],
-			processUrl:'{{ route("admin.change-profile-picture") }}',
-			withCSRF:['_token', '{{ csrf_token() }}'],
-
-			onSuccess:function(message, element, status){
-			alert(message);
-			},
-			onError:function(message, element, status){
-			alert(message);
-			}
-		}); 
-    </script>
-@endpush 
+ 

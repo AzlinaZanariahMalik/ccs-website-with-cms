@@ -231,7 +231,7 @@
         </div>
 
         <!---User Table-->
-        @if(Session::get('success'))
+                 @if(Session::get('success'))
                         <div class="alert alert-success"role="alert">
                             {{ Session::get('success')}}
                             <button style="float:right" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -274,7 +274,7 @@
                 <td>
                     <a href="#" wire:click.prevent="editUser({{$user}})"  class="btn btn-success"><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAO1JREFUSEvVldENwjAMRK+b0E1gE5ikMAlsAqOUSUCHkshK48ZO0w/6h2jesy+JO2DnZ9iZj56CO4A3gKssOhccAfDFQ6WzE4CXeIdrzuH3TUpywRMAJWtPDmcxXCeLSpJc8Alka3SEzgEuJRcAD7K2CBgLu2VHUsLqf/AtApk54VGyiLalAwmPQErG0sZ5BSU4uSnzXOIRWOHcl3SErQIPnKcpcS0CK5zpLI65RRAXyXi1zLsI1A3t0cEavDkiz0Rviui/BJZxXeuIl4yzqTjseAsnwzdBk3Am8SCoN7lWnft/64fFDdYiagZpC7+V+kAZgABxUwAAAABJRU5ErkJggg=='}}"/></a>
                     <a href="#" wire:click.prevent="deleteUser({{$user}})"  class="btn btn-danger"><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAIJJREFUSEvtldENgCAMRB+b6ShOok6mo7iJpomRBC0VA3613829cgUu0LhCY33eADpgUQaZgSk3pAXIiYvuBgzAqkFSwF7Jskv3d0ClA0QZbQdfrbrpOSDdmVtk3mK3yC2KDjT/iyTBJGxKSkKnN5/22SDiYwFETTYrMktO8NjbHHAA6kwZGXDWtewAAAAASUVORK5CYII='}}"/></a>
-                   
+                    
                 </td>
                 </tr>
                 @empty
@@ -288,8 +288,8 @@
         <!--responsive table-->
 
 <!--MODALS--->
-    <!--Delete Program Modals---->
-    <div   class="modal fade" id="deleteUsersModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!--Delete Modals---->
+    <div wire:ignore.self  class="modal fade" id="deleteUsersModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
             <div class="modal-header">

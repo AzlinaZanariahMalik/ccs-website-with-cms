@@ -1,6 +1,6 @@
 <div>
 <div class="p-3 follow text-center">
-          <h6 class=" ">Follow Us</h6>
+          <h6 class="">Follow Us</h6>
          </div>
       
       <div class="p-3 social-link text-center">

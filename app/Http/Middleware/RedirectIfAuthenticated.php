@@ -21,11 +21,31 @@ class RedirectIfAuthenticated
     {
         $guards = empty($guards) ? [null] : $guards;
 
+        // if (Auth::guard('web')->check())
+        //{
+        //    if($this->auth->user()){
+        //           return redirect()->route('admin.home');
+        //    }
+        //}
+        //elseif (Auth::guard('alu')->check())
+        //{
+        //    if($this->auth->user()){
+        //        return redirect()->route('alumni.home');
+         //}
+        //}
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                // return redirect(RouteServiceProvider::HOME);
-                return redirect()->route('admin.home');
-            }
+                //return redirect(RouteServiceProvider::HOME);
+                //if($this->auth->user()){
+                //    return redirect()->route('admin.home');
+                //}
+                if($guard === 'alu'){
+                    return redirect()->route('alumni-tracer-study.home');
+                }
+                    return redirect()->route('admin.home'); 
+              
+                
+            } 
         }
 
         return $next($request);

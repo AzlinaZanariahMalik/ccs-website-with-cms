@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('news', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->nullable();
+            $table->string('unique_id')->unique();
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('news_title')->nullable();
             $table->text('post')->nullable();
             $table->text('feature_image')->nullable();

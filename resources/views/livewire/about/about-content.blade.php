@@ -1,12 +1,10 @@
-<div wire:ignore> 
+<div > 
     <div class="data">
-		<div class="content-data"> 
+		<div class="content-data" style="width:100%" > 
             <div class="info">
-                    
+                
                 <form wire:submit.prevent="UpdateAboutContent()" method="post" class="row g-3" >
                 @csrf
-                    
-                    <h3>College Brief Description</h3>
                     @if(Session::get('success'))
                         <div class="alert alert-success"role="alert">
                             {{ Session::get('success')}}
@@ -16,18 +14,20 @@
                         <div class="alert alert-danger"role="alert">
                             {{ Session::get('fail')}}
                         </div>
-                    @endif    
+                    @endif       
+                    <h3>College Brief Description</h3>
+                    
                         
                         
-                        <div class="col-md-12 "  >
+                        <div class="col-md-12 " wire:ignore>
                            
-                            <textarea type="textarea" cols="80" class="form-control @error('about') is-invalid @enderror" rows="12" id="about" placeholder="Details....." wire:model='about'> {{$about_content->about}}
+                            <textarea type="textarea" cols="80" class="form-control @error('about') is-invalid @enderror" rows="12" id="about" style="display: none" placeholder="Enter the description of college....." wire:model.lazy='about'> {{$about_content->about}}
                             </textarea>
-                            @error('about')
-                                <span class="text-danger">{{ $message }}</span>
-                            @enderror
+                           
                         </div>
-                        
+                        @error('about')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
                         <div class="col-12">
                             <button class="btn btn-main" type="submit"><span wire:loading.remove >Update</span><span wire:loading >Updating...</span></button>
                         </div>

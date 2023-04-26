@@ -18,8 +18,9 @@
 
 	<!---Library--->
 	<link rel="stylesheet" href="{{ asset('back/library/ijaboCropTool/ijaboCropTool.min.css') }}">
-
+	<link rel="stylesheet" href="{{ url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')}}" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	
+	@stack('styles')
 	@stack('stylesheets')
 
 	<!--Livewire Framework----->
@@ -41,27 +42,15 @@
 	<!---Library--->
 	
 	<script src="{{ asset('back/library/ckeditor/ckeditor.js') }}" ></script>
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 	<script src="{{ asset('back/library/ijaboCropTool/ijaboCropTool.min.js') }}" ></script>
+	<script src="{{ url('https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js')}}"></script>
 	<script src="{{ asset('back/js/main.js')}}"></script>
+
 	@stack('scripts')
 	<!--Livewire Framework----->
 	@livewireScripts
-	<script>
-		window.addEventListener('closeModal', event => {
-			$('#addProgramModal').modal('hide');
-		});
-		window.addEventListener('openModal', event => {
-			$('#addProgramModal').modal('show');
-		});
-		window.addEventListener('openDeleteModal', event => {
-			$('#ProgramDeleteModal').modal('show');
-		});
-		window.addEventListener('closeDeleteModal', event => {
-			$('#ProgramDeleteModal').modal('hide');
-		});
-		window
-	</script>
+	
 	
 </body>
 </html>

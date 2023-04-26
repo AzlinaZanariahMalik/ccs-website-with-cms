@@ -11,3 +11,4 @@ class PageFacultyAndStaff extends Component
         return view('livewire.website.page.page-faculty-and-staff', ['users'=>User::all()]);
     }
 } 
+ 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire;
+namespace App\Http\Livewire\Department;
 
 use Livewire\Component;
 use Livewire\withFileUploads;
@@ -16,7 +16,7 @@ class DepartmentForm extends Component
     public function CreateDepartment(){
         $this->validate([
             'dept_name'=>['required'],
-            'dept_desc'=>['required','min:150'],
+            'dept_desc'=>['required','min:50'],
             'dept_image'=>['mimes:jpeg,png,jpg,gif' ]
            
         ]); 
@@ -44,6 +44,7 @@ class DepartmentForm extends Component
         //function for refresh page
         $this->emit('AddedDepartment');
     }
+    
     private function resetForms()
     {
         $this->dept_name = null;
@@ -56,6 +57,6 @@ class DepartmentForm extends Component
     }
     public function render()
     {
-        return view('livewire.department-form');
+        return view('livewire.department.department-form');
     }
 }

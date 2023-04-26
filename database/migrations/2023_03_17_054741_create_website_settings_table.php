@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('website_abbv_name');
             $table->string('website_logo');
             $table->string('website_icon');
+            $table->string('website_banner');
             $table->timestamps();
         });
     }

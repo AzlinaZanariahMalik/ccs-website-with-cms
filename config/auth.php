@@ -17,7 +17,12 @@ return [
         'guard' => 'web',
         'passwords' => 'users',
     ],
+    'alu' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Alumni::class,
+    ],
 
+   
     /*
     |--------------------------------------------------------------------------
     | Authentication Guards
@@ -39,6 +44,10 @@ return [
         'web' => [
             'driver' => 'session',
             'provider' => 'users',
+        ],
+        'alu' => [
+            'driver' => 'session',
+            'provider' => 'alumnis',
         ],
     ],
 
@@ -63,6 +72,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'alumnis' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Alumni::class,
         ],
 
         // 'users' => [
@@ -97,6 +110,13 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+        'alumnis' => [
+            'provider' => 'alumnis',
+            'table' => 'password_reset_tokens',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+       
     ],
 
     /*

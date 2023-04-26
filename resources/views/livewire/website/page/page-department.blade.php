@@ -28,8 +28,8 @@
               <div class="col-md-8">
                 <div class="card-body">
                   <h5 class="card-title">{{$dept->dept_name}}</h5>
-                  <p class="card-text">{!! Str::limit($dept->dept_desc, '100') !!}<a class="readmore"> View </a> </p>
-                 
+                  <p class="card-text">{!! Str::limit($dept->dept_desc, '100') !!}</p>
+                  <a href="{{route('department-show',[$dept->id,preg_replace('/\+/','-',urlencode($dept->dept_name))])}}" type="submit" class="readmore"> View </a> 
                 </div>
               </div>
             </div>

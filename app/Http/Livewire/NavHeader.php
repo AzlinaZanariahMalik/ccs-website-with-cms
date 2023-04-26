@@ -20,3 +20,4 @@ class NavHeader extends Component
         return view('livewire.nav-header');
     } 
 }
+  

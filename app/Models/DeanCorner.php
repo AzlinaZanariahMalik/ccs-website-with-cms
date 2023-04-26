@@ -17,4 +17,4 @@ class DeanCorner extends Model
         'updated_at'
     ];
 }
- 
+  

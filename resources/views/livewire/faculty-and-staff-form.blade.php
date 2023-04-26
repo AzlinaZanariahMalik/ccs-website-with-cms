@@ -1,10 +1,26 @@
 <div>
 <div class="col-md-8  flex-start">
-            <button type="button" class="btn btn-main" data-bs-toggle="modal" data-bs-target="#addUsersModal">Assign Faculty</button>
+    <button type="button" class="btn btn-main" data-bs-toggle="modal" data-bs-target="#addUsersModal">Assign Faculty</button>
 </div>
+
 <h3 class="text-center">Organizational Chart</h3>
+
 <div class="data">
         <div class="content-data"> 
+            @if(Session::get('success'))
+                        <div class="alert alert-success"role="alert">
+                            {{ Session::get('success')}}
+                            <button style="float:right" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @elseif (Session::get('fail'))
+                        <div class="alert alert-danger"role="alert">
+                            {{ Session::get('fail')}}
+                        </div>
+                    @elseif (Session::get('offline'))
+                        <div class="alert alert-danger"role="alert">
+                            {{ Session::get('offline')}}
+                        </div>
+                    @endif 
     <!--For Rank 1-->
     <div class="data">
         <div class="content-data"> 
@@ -13,17 +29,24 @@
             
         @foreach ($users as $user)
         <div class="d-flex flex-column text-center" >
-       
+        
             @if($user->rank == '1')
                
-                <img src="{{ url('/images/user/defaultprofileimg.jpg') }}"
-                alt="user image" class="img-fluid img-thumbnail mt-4 mb-2"
-                style="width: 150px; z-index: 1">
+            @if (!empty($user->picture))
+                            <img src="{{ url('storage/photos/user/'. $user->picture)}}"
+                        alt="user image" class="img-fluid img-thumbnail mt-4 mb-2"
+                        style="width: 150px; height:150px;z-index: 1; object-fit:cover;">
+                        @else
+                         <img src="{{ url('/images/user/defaultprofileimg.jpg') }}"
+                        alt="user image" class="img-fluid img-thumbnail mt-4 mb-2"
+                        style="width: 150px;  z-index: 1">
+                        @endif
              
                 <p>{{$user->name}}</p>
-                <p>{{$user->designation}}</p>
+                <p>{{$user->designation}}</p> 
                 <p>{{$user->title}}</p>
-                <p><button class="btn btn-success" type="submit"><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAO1JREFUSEvVldENwjAMRK+b0E1gE5ikMAlsAqOUSUCHkshK48ZO0w/6h2jesy+JO2DnZ9iZj56CO4A3gKssOhccAfDFQ6WzE4CXeIdrzuH3TUpywRMAJWtPDmcxXCeLSpJc8Alka3SEzgEuJRcAD7K2CBgLu2VHUsLqf/AtApk54VGyiLalAwmPQErG0sZ5BSU4uSnzXOIRWOHcl3SErQIPnKcpcS0CK5zpLI65RRAXyXi1zLsI1A3t0cEavDkiz0Rviui/BJZxXeuIl4yzqTjseAsnwzdBk3Am8SCoN7lWnft/64fFDdYiagZpC7+V+kAZgABxUwAAAABJRU5ErkJggg=='}}"/></button> 
+                <p>
+                    <a href="{{route('admin.edit-faculty', $user->id)}}" class="btn btn-success" type="submit"><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAO1JREFUSEvVldENwjAMRK+b0E1gE5ikMAlsAqOUSUCHkshK48ZO0w/6h2jesy+JO2DnZ9iZj56CO4A3gKssOhccAfDFQ6WzE4CXeIdrzuH3TUpywRMAJWtPDmcxXCeLSpJc8Alka3SEzgEuJRcAD7K2CBgLu2VHUsLqf/AtApk54VGyiLalAwmPQErG0sZ5BSU4uSnzXOIRWOHcl3SErQIPnKcpcS0CK5zpLI65RRAXyXi1zLsI1A3t0cEavDkiz0Rviui/BJZxXeuIl4yzqTjseAsnwzdBk3Am8SCoN7lWnft/64fFDdYiagZpC7+V+kAZgABxUwAAAABJRU5ErkJggg=='}}"/></a>
                     <button wire:click="selectItem({{ $user->id }}, 'delete')" class="btn btn-danger" type="submit"><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAIJJREFUSEvtldENgCAMRB+b6ShOok6mo7iJpomRBC0VA3613829cgUu0LhCY33eADpgUQaZgSk3pAXIiYvuBgzAqkFSwF7Jskv3d0ClA0QZbQdfrbrpOSDdmVtk3mK3yC2KDjT/iyTBJGxKSkKnN5/22SDiYwFETTYrMktO8NjbHHAA6kwZGXDWtewAAAAASUVORK5CYII='}}"/></button>
                 </p>
                 @elseif($user->rank == '1' and $user->rank == null)
@@ -49,14 +72,21 @@
                 <div class="d-flex flex-column text-center" >
                    
                     @if($user->rank == '2')
-                    <img src="{{ url('/images/user/defaultprofileimg.jpg') }}"
-                    alt="user image" class="img-fluid img-thumbnail mt-4 mb-2"
-                    style="width: 150px; z-index: 1">
+                        @if (!empty($user->picture))
+                            <img src="{{ url('storage/photos/user/'. $user->picture)}}"
+                        alt="user image" class="img-fluid img-thumbnail mt-4 mb-2"
+                        style="width: 150px; height:150px; z-index: 1; object-fit:cover;">
+                        @else
+                         <img src="{{ url('/images/user/defaultprofileimg.jpg') }}"
+                        alt="user image" class="img-fluid img-thumbnail mt-4 mb-2"
+                        style="width: 150px;  z-index: 1">
+                        @endif
+                   
                 
                     <p>{{$user->name}}</p>
                     <p>{{$user->designation}}</p>
                     <p>{{$user->title}}</p>
-                    <p><button class="btn btn-success" type="submit"><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAO1JREFUSEvVldENwjAMRK+b0E1gE5ikMAlsAqOUSUCHkshK48ZO0w/6h2jesy+JO2DnZ9iZj56CO4A3gKssOhccAfDFQ6WzE4CXeIdrzuH3TUpywRMAJWtPDmcxXCeLSpJc8Alka3SEzgEuJRcAD7K2CBgLu2VHUsLqf/AtApk54VGyiLalAwmPQErG0sZ5BSU4uSnzXOIRWOHcl3SErQIPnKcpcS0CK5zpLI65RRAXyXi1zLsI1A3t0cEavDkiz0Rviui/BJZxXeuIl4yzqTjseAsnwzdBk3Am8SCoN7lWnft/64fFDdYiagZpC7+V+kAZgABxUwAAAABJRU5ErkJggg=='}}"/></button> 
+                    <p><a href="{{route('admin.edit-faculty', $user->id)}}" class="btn btn-success" type="submit"><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAO1JREFUSEvVldENwjAMRK+b0E1gE5ikMAlsAqOUSUCHkshK48ZO0w/6h2jesy+JO2DnZ9iZj56CO4A3gKssOhccAfDFQ6WzE4CXeIdrzuH3TUpywRMAJWtPDmcxXCeLSpJc8Alka3SEzgEuJRcAD7K2CBgLu2VHUsLqf/AtApk54VGyiLalAwmPQErG0sZ5BSU4uSnzXOIRWOHcl3SErQIPnKcpcS0CK5zpLI65RRAXyXi1zLsI1A3t0cEavDkiz0Rviui/BJZxXeuIl4yzqTjseAsnwzdBk3Am8SCoN7lWnft/64fFDdYiagZpC7+V+kAZgABxUwAAAABJRU5ErkJggg=='}}"/></a>
                     <button wire:click="selectItem({{ $user->id }}, 'delete')" class="btn btn-danger" type="submit"><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAIJJREFUSEvtldENgCAMRB+b6ShOok6mo7iJpomRBC0VA3613829cgUu0LhCY33eADpgUQaZgSk3pAXIiYvuBgzAqkFSwF7Jskv3d0ClA0QZbQdfrbrpOSDdmVtk3mK3yC2KDjT/iyTBJGxKSkKnN5/22SDiYwFETTYrMktO8NjbHHAA6kwZGXDWtewAAAAASUVORK5CYII='}}"/></button>
                     </p>
                     
@@ -78,14 +108,21 @@
         @foreach ($users as $user)
         <div class="d-flex flex-column text-center" >
             @if($user->rank == '3')
-            <img src="{{ url('/images/user/defaultprofileimg.jpg') }}"
-            alt="user image" class="img-fluid img-thumbnail mt-4 mb-2"
-            style="width: 150px; z-index: 1">
+                 @if (!empty($user->picture))
+                    <img src="{{ url('storage/photos/user/'. $user->picture)}}"
+                    alt="user image" class="img-fluid img-thumbnail mt-4 mb-2"
+                    style="width: 150px; height:150px; z-index: 1; object-fit:cover;">
+                @else
+                    <img src="{{ url('/images/user/defaultprofileimg.jpg') }}"
+                    alt="user image" class="img-fluid img-thumbnail mt-4 mb-2"
+                    style="width: 150px; z-index: 1">
+                @endif
            
             <p>{{$user->name}}</p>
             <p>{{$user->designation}}</p>
             <p>{{$user->title}}</p>
-            <p><button class="btn btn-success" type="submit"><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAO1JREFUSEvVldENwjAMRK+b0E1gE5ikMAlsAqOUSUCHkshK48ZO0w/6h2jesy+JO2DnZ9iZj56CO4A3gKssOhccAfDFQ6WzE4CXeIdrzuH3TUpywRMAJWtPDmcxXCeLSpJc8Alka3SEzgEuJRcAD7K2CBgLu2VHUsLqf/AtApk54VGyiLalAwmPQErG0sZ5BSU4uSnzXOIRWOHcl3SErQIPnKcpcS0CK5zpLI65RRAXyXi1zLsI1A3t0cEavDkiz0Rviui/BJZxXeuIl4yzqTjseAsnwzdBk3Am8SCoN7lWnft/64fFDdYiagZpC7+V+kAZgABxUwAAAABJRU5ErkJggg=='}}"/></button> 
+            <p>
+                <a href="{{route('admin.edit-faculty', $user->id)}}" class="btn btn-success" type="submit"><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAO1JREFUSEvVldENwjAMRK+b0E1gE5ikMAlsAqOUSUCHkshK48ZO0w/6h2jesy+JO2DnZ9iZj56CO4A3gKssOhccAfDFQ6WzE4CXeIdrzuH3TUpywRMAJWtPDmcxXCeLSpJc8Alka3SEzgEuJRcAD7K2CBgLu2VHUsLqf/AtApk54VGyiLalAwmPQErG0sZ5BSU4uSnzXOIRWOHcl3SErQIPnKcpcS0CK5zpLI65RRAXyXi1zLsI1A3t0cEavDkiz0Rviui/BJZxXeuIl4yzqTjseAsnwzdBk3Am8SCoN7lWnft/64fFDdYiagZpC7+V+kAZgABxUwAAAABJRU5ErkJggg=='}}"/></a>
                 <button wire:click="selectItem({{ $user->id }}, 'delete')" class="btn btn-danger" type="submit"><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAIJJREFUSEvtldENgCAMRB+b6ShOok6mo7iJpomRBC0VA3613829cgUu0LhCY33eADpgUQaZgSk3pAXIiYvuBgzAqkFSwF7Jskv3d0ClA0QZbQdfrbrpOSDdmVtk3mK3yC2KDjT/iyTBJGxKSkKnN5/22SDiYwFETTYrMktO8NjbHHAA6kwZGXDWtewAAAAASUVORK5CYII='}}"/></button>
             </p>
             @endif
@@ -104,14 +141,21 @@
         @foreach ($users as $user)
         <div class="d-flex flex-column text-center" >
             @if($user->rank == '4')
-            <img src="{{ url('/images/user/defaultprofileimg.jpg') }}"
-            alt="user image" class="img-fluid img-thumbnail mt-4 mb-2"
-            style="width: 150px; z-index: 1">
+            @if (!empty($user->picture))
+                            <img src="{{ url('storage/photos/user/'. $user->picture)}}"
+                        alt="user image" class="img-fluid img-thumbnail mt-4 mb-2"
+                        style="width: 150px; height:150px; z-index: 1; object-fit:cover;">
+                        @else
+                         <img src="{{ url('/images/user/defaultprofileimg.jpg') }}"
+                        alt="user image" class="img-fluid img-thumbnail mt-4 mb-2"
+                        style="width: 150px; height:150px; z-index: 1">
+                        @endif
            
             <p>{{$user->name}}</p>
             <p>{{$user->designation}}</p>
-            <p>{{$user->title}}</p>
-            <p><button class="btn btn-success" type="submit"><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAO1JREFUSEvVldENwjAMRK+b0E1gE5ikMAlsAqOUSUCHkshK48ZO0w/6h2jesy+JO2DnZ9iZj56CO4A3gKssOhccAfDFQ6WzE4CXeIdrzuH3TUpywRMAJWtPDmcxXCeLSpJc8Alka3SEzgEuJRcAD7K2CBgLu2VHUsLqf/AtApk54VGyiLalAwmPQErG0sZ5BSU4uSnzXOIRWOHcl3SErQIPnKcpcS0CK5zpLI65RRAXyXi1zLsI1A3t0cEavDkiz0Rviui/BJZxXeuIl4yzqTjseAsnwzdBk3Am8SCoN7lWnft/64fFDdYiagZpC7+V+kAZgABxUwAAAABJRU5ErkJggg=='}}"/></button> 
+            <p>{{$user->title}}
+            <p>
+                <a href="{{route('admin.edit-faculty', $user->id)}}" class="btn btn-success" type="submit"><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAO1JREFUSEvVldENwjAMRK+b0E1gE5ikMAlsAqOUSUCHkshK48ZO0w/6h2jesy+JO2DnZ9iZj56CO4A3gKssOhccAfDFQ6WzE4CXeIdrzuH3TUpywRMAJWtPDmcxXCeLSpJc8Alka3SEzgEuJRcAD7K2CBgLu2VHUsLqf/AtApk54VGyiLalAwmPQErG0sZ5BSU4uSnzXOIRWOHcl3SErQIPnKcpcS0CK5zpLI65RRAXyXi1zLsI1A3t0cEavDkiz0Rviui/BJZxXeuIl4yzqTjseAsnwzdBk3Am8SCoN7lWnft/64fFDdYiagZpC7+V+kAZgABxUwAAAABJRU5ErkJggg=='}}"/></a>
                <button wire:click="selectItem({{ $user->id }}, 'delete')" class="btn btn-danger" type="submit"><img class="icon" src="{{'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAIJJREFUSEvtldENgCAMRB+b6ShOok6mo7iJpomRBC0VA3613829cgUu0LhCY33eADpgUQaZgSk3pAXIiYvuBgzAqkFSwF7Jskv3d0ClA0QZbQdfrbrpOSDdmVtk3mK3yC2KDjT/iyTBJGxKSkKnN5/22SDiYwFETTYrMktO8NjbHHAA6kwZGXDWtewAAAAASUVORK5CYII='}}"/></button>
             </p>
             @endif
@@ -136,20 +180,7 @@
             <form  wire:submit.prevent="AssignFaculty()" method="post" class="row g-3">
             @csrf
                     
-                    @if(Session::get('success'))
-                        <div class="alert alert-success"role="alert">
-                            {{ Session::get('success')}}
-                            <button style="float:right" type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    @elseif (Session::get('fail'))
-                        <div class="alert alert-danger"role="alert">
-                            {{ Session::get('fail')}}
-                        </div>
-                    @elseif (Session::get('offline'))
-                        <div class="alert alert-danger"role="alert">
-                            {{ Session::get('offline')}}
-                        </div>
-                    @endif 
+                    
 
                     <div class="mb-3">
                         <label  class="required form-label">Faculty</label>
@@ -164,7 +195,7 @@
                             @enderror
                             
                     </div>
-
+ 
                     <div class="mb-3">
                         <label  class="required form-label">Rank</label>
                         <select class="form-select @error('faculty') is-invalid @enderror" aria-label="Default select example" wire:model='rank'>
@@ -207,6 +238,17 @@
                          
                             
                     </div>
+
+                    <div class="mb-3">
+                        <label class="required form-label">Profile Picture</label>
+                        <br>
+                            <input class="form-control" type="file" wire:model="picture">
+                            @error('picture')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
+                                
+                        
+                    </div> 
                    
 
                    
@@ -226,6 +268,9 @@
         $(window).on('hidden.bs.modal', function(){
             Livewire.emit('resetForms');
         });
-      
+        window.addEventListener('hide_user_modal', function(event){
+            $('#addUsersModal').modal('hide');
+        });
+	
     </script>
 @endpush

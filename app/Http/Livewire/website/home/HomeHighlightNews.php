@@ -12,6 +12,7 @@ class HomeHighlightNews extends Component
     public function render()
     {
         return view('livewire.website.home.home-highlight-news',[
-            'newsmanage'=>News::paginate(1)]);
+            'newsmanage'=>News::where('highlight', 'like', 'true')->get()]);
     }
 }
+ 

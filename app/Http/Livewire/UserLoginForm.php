@@ -5,17 +5,18 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
-
+ 
 class UserLoginForm extends Component
 {
     public $email, $password; //variable name for table's fields
-   
+    public $visible;
     //return url
     public $returnURL;
 
     //for returnURL
     public function mount(){
         $this->returnUrl = request()->returnURL;
+        $this->visible = false;
     }
 
     public function LoginHandler(){

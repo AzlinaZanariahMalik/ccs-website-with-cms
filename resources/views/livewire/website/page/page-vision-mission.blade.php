@@ -4,11 +4,11 @@
     <div class="row gx-5">
     <h5 class="p-3 web-title text-start"> Vision</h5>
     <br><br>
-    <span class="text-justify">{!! $homeabout->vision !!}</span>
+    <span class="text-justify">{!! $vis->vision !!}</span>
     <br>
     <h5 class="p-3 web-title text-start"> Mission</h5>
     <br><br>
-    <span class="text-justify">{!! $homeabout->mission !!}</span>
+    <span class="text-justify">{!! $min->mission !!}</span>
 
 
 </div>

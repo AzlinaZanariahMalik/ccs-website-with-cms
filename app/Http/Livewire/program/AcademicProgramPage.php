@@ -10,27 +10,26 @@ class AcademicProgramPage extends Component
 {
     use withPagination;
     protected $paginationTheme = 'bootstrap';
-    public $action;
-    public $selectedItem; 
+    public $program;
+    public $program_id;
 
-    //get the current selected id
-    public function selectItem($itemId, $action)
-    {
-        $this->selectedItem = $itemId;
-       
-        //initial state
-        if($action == 'delete'){
-            //show modal
-            $this->dispatchBrowserEvent('openDeleteModal');
-        }
-    }
-    public function delete()
-    {
-        //pass the variable
-        AcademicProgram::destroy($this->selectedItem);
-        $this->dispatchBrowserEvent('closeDeleteModal');
-    }
-    
+   //delete
+   public function deleteprogram($program){
+    $this->program_id = $program['id'];
+    $this->dispatchBrowserEvent('openDeleteModal');
+  }
+  public function delete()
+  {
+      //pass the variable
+      AcademicProgram::destroy($this->program_id);
+
+       //show success message
+       session()->flash('success', 'Succesfully Deleted program');
+        
+       //close modal
+      $this->dispatchBrowserEvent('hideDeleteModal');
+
+  }
     public function render()
     {
         return view('livewire.program.academic-program-page', [
@@ -38,3 +37,4 @@ class AcademicProgramPage extends Component
     );
     }
 }
+

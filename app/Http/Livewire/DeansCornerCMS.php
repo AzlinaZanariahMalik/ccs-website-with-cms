@@ -25,13 +25,40 @@ class DeansCornerCMS extends Component
         $this->validate([
             'dean_title'=>['required','max:20'],
             'dean_desc'=>['required','min:50'],
-            'dean_image'=>['mimes:jpeg,png,jpg,gif' ]
            
         ]); 
 
         $data = [
             'dean_title'=> $this->dean_title,
             'dean_desc'=> $this->dean_desc,
+            $this->updated_at = now()
+        ];
+       
+
+        $update = $this->dean->update([
+            'dean_title'=> $this->dean_title,
+            'dean_desc'=> $this->dean_desc,
+            $this->updated_at = now()
+        ]);
+ 
+        
+        
+
+        //show success message
+        session()->flash('success', 'Deans Corner Successfully Updated');
+        //remove alert success message: NOT WORKING
+        $this->emit('alert_remove');
+        //function for refresh page
+    }
+    public function UpdateDeanCornerImg(){
+
+        
+        $this->validate([
+            'dean_image'=>['mimes:jpeg,png,jpg' ]
+           
+        ]); 
+
+        $data = [
             'dean_image'=>$this->dean_image->hashName(),
           
             $this->updated_at = now()
@@ -41,8 +68,6 @@ class DeansCornerCMS extends Component
         }
 
         $update = $this->dean->update([
-            'dean_title'=> $this->dean_title,
-            'dean_desc'=> $this->dean_desc,
             'dean_image'=>$this->dean_image->hashName(),
             $this->updated_at = now()
         ]);
@@ -51,7 +76,7 @@ class DeansCornerCMS extends Component
         
 
         //show success message
-        session()->flash('success', 'Deans Corner Successfully Updated');
+        session()->flash('success', 'Deans Corner Image Successfully Updated');
         //remove alert success message: NOT WORKING
         $this->emit('alert_remove');
         //function for refresh page

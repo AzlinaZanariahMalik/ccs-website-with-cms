@@ -5,8 +5,8 @@ namespace App\Http\Livewire\Users;
 use Livewire\Component;
 use App\Models\User;
 use Carbon\Carbon;
-//Generate Random Pass
 use Illuminate\Support\Facades\Hash;
+//Generate Random Pass
 use Nette\Utils\Random;
 use Illuminate\Support\Facades\Mail;
 use Livewire\withPagination;
@@ -154,6 +154,7 @@ class UsersManagement extends Component
             ]);
              //show success message
              session()->flash('success', 'Succesfully Updated User');
+             $this->emit('alert_remove');
           
              //close modal
              $this->dispatchBrowserEvent('hideEditModal');

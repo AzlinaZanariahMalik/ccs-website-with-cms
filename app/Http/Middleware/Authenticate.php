@@ -22,7 +22,9 @@ class Authenticate extends Middleware
                 session()->flash('fail','Please Sign into your account');
                 return route('login',['fail'=>true,'returnURL'=>URL::current()]);
             }
-            
+            if($request->routeIs('alumni-tracer-study.*')){
+                return route('alumni-tracer-study.sign-in');
+            }
         }
     }
-}
+} 

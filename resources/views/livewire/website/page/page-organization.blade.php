@@ -29,7 +29,7 @@
                 <div class="card-body">
                   <h5 class="card-title">{{$org->org_name}}</h5>
                   <p class="card-text">{!! Str::limit($org->org_desc, '50') !!}</p>
-                 
+                  <a href="{{route('organization-show',[$org->id,preg_replace('/\+/','-',urlencode($org->org_name))])}}" type="submit" class="readmore"> View </a> 
                 </div>
               </div>
             </div>

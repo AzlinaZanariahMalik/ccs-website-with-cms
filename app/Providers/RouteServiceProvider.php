@@ -34,10 +34,12 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
             Route::middleware('web')
-                ->group(base_path('routes/admin.php'));    
+                ->group(base_path('routes/admin.php'));
+            Route::middleware('alu')
+                ->group(base_path('routes/alumni.php'));
         });
-    }
-
+    } 
+  
     /**
      * Configure the rate limiters for the application.
      */

@@ -30,7 +30,7 @@ class User extends Authenticatable
         'qualification',
         'publish_permission',
         'department_id',
-        'profile',
+        'picture',
         'status',
         'created_at',
         'updated_at'
@@ -62,14 +62,14 @@ class User extends Authenticatable
     }
 
     //get picture
-    public function getPictureAttribute($value){
-        if($value){
-            return asset('/images/user/'.$value);
-        }else{
-            //if empty display default picture
-            return asset('/images/user/defaultprofileimg.jpg');
-        }
-    }
+    //public function getPictureAttribute($value){
+    //     if($value){
+    //        return asset('/images/user/'.$value);
+    //    }else{
+    //        //if empty display default picture
+    //        return asset('/images/user/defaultprofileimg.jpg');
+    //    }
+    //}
 
     //search method
     public function scopeSearch($query, $term){

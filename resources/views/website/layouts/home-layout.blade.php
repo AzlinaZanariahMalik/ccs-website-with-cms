@@ -16,10 +16,10 @@
         <link  href="{{ asset('website/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" >
 
         <!---Styles---->
-        <link  href="{{ asset('website/css/webStyle.css') }}" rel="stylesheet" type="text/css"  >
+        <link  href="{{ asset('website/css/websiteStyle.css') }}" rel="stylesheet" type="text/css"  >
 
 	
-	@stack('stylesheets')
+	@stack('styles')
 
 	<!--Livewire Framework----->
 	@livewireStyles
@@ -27,7 +27,98 @@
        
     </head>
 <body>
-    
+<div class="header-background">
+    <div id="nav" class="sticky-nav">
+     
+    <nav class="navbar navbar-expand-lg sticky-top">
+       
+
+      <div class="container">
+        <ul class="navbar-nav mr-auto">
+          <a class="nav-item" href="/">
+            <img src="{{ url('storage/photos/logo-icon/'. College_info()->website_logo )}}" width="50" height="50" class="d-inline-block align-top" alt="">
+          </a>
+        </ul>
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="toggler-icon top-bar"></span>
+            <span class="toggler-icon middle-bar"></span>
+            <span class="toggler-icon bottom-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+
+          <li class="nav-item">
+              <a class="nav-link " href="/">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="{{route('about-ccs')}}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                About CCS
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{route('vision-mission')}}">Vision Mission</a></li>
+                <li><a class="dropdown-item" href="{{route('goals')}}">College Goals</a></li>
+                <li><a class="dropdown-item" href="{{route('history')}}">History</a></li>
+                <li><a class="dropdown-item" href="/department">Department</a></li>
+                <li><a class="dropdown-item" href="/faculty-and-staff">Faculty & Staff</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Academic Program
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/undergraduate">Undergraduate Program</a></li>
+                <li><a class="dropdown-item" href="/graduate">Graduate Program</a></li>
+               
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/news">News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/organization">Pythons</a>
+            </li>
+           <li class="nav-item">
+              <a class="nav-link" href="{{route('alumni-tracer-study.home') }}">Alumni</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('contact-us') }}">Contact</a>
+            </li>
+            
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <div class="d-flex justify-content-center h-100"><form action="{{ url('search')}}" method="GET" role="search">
+                  <div class="searchbar">
+                    
+                      <input class="search_input" type="text" name="search" value="{{ Request::get('search')}}" placeholder="Search..." autocomplete="off">
+                      <a style="cursor: default" href="#" class="search_icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255,255,255);transform: ;msFilter:;"><path d="M10 18a7.952 7.952 0 0 0 4.897-1.688l4.396 4.396 1.414-1.414-4.396-4.396A7.952 7.952 0 0 0 18 10c0-4.411-3.589-8-8-8s-8 3.589-8 8 3.589 8 8 8zm0-14c3.309 0 6 2.691 6 6s-2.691 6-6 6-6-2.691-6-6 2.691-6 6-6z"></path></svg></a>
+                    
+                    </div></form>
+              </div>
+                
+            </li>
+          </ul> 
+          
+        </div>
+      </div>
+    </nav>
+    </div>
+
+  </div>
+
+  <!--<section class="container">
+    <div class="text-center justify-content-center"> 
+      
+        <a class="navbar-brand" href="#">
+          <img src="{{ url('storage/photos/logo-icon/'. College_info()->website_logo )}}" width="125" height="125" class="d-inline-block align-top" alt="">
+        </a> 
+       <br><br>
+       <h6 class="text-uppercase">{{ College_info()->website_name}}</h6>
+     
+      </div>
+  </section>--->
+
  
   @yield('content')
 		 <!-- Content Page -->
@@ -64,7 +155,7 @@
     </div>
 
     <div class="p-3 copyright text-center">
-        <span class=" ">© 2023 College of Computing Studies and Constellation WebTech</span>
+        <span class=" ">© 2023 {{ College_info()->website_name}} and Constellation WebTech</span>
       </div>
   </footer>
     @stack('scripts')

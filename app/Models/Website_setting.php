@@ -14,6 +14,7 @@ class Website_setting extends Model
         'website_abbv_name',
         'website_logo',
         'website_icon',
+        'website_banner',
     ];
 
    
