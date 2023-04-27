@@ -33,7 +33,7 @@ Route::view('/dean-corner','website.pages.deancorner')->name('dean-corner');
 Route::view('/faculty-and-staff','website.pages.facultystaff')->name('faculty-and-staff');
 Route::view('/contact-us','website.pages.contactform')->name('contact-us');
 
-Route::view('/viewonly','website.pages.alumniforview')->name('viewonly');
+Route::view('/about-project','website.pages.aboutproject')->name('about-project');
 
 
 //get their parameters clickable items

@@ -148,6 +148,8 @@
       </div>
       <div class="col-md-4">
       @livewire('website.home.home-social-links')
+
+     
       </div>
     </div>
      
@@ -155,7 +157,7 @@
     </div>
 
     <div class="p-3 copyright text-center">
-        <span class=" ">© 2023 {{ College_info()->website_name}} and Constellation WebTech</span>
+        <span class=" ">© 2023 {{ College_info()->website_name}} and <a href="{{route('about-project')}}" style="color:#0d3a0d;">Project by Constellation WebTech</a></span>
       </div>
   </footer>
     @stack('scripts')

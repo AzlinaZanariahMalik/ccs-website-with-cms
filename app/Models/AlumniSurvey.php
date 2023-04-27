@@ -11,7 +11,8 @@ class AlumniSurvey extends Model
     protected $fillable = [
         'astudent_id',
         'surv_exp',
-        'surv_exp',
+        'surv_comment',
+        'surv_suggestion',
         'display',
         'created_at',
         'updated_at'
